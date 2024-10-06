@@ -1,9 +1,9 @@
 import express from 'express'
 import http from 'http'
-import WebSocket, { WebSocketServer } from 'ws'
+import { WebSocketServer } from 'ws'
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 const server = http.createServer(app)
 const wss = new WebSocketServer({ server })

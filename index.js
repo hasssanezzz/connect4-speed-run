@@ -102,10 +102,6 @@ wss.on('connection', (ws, req) => {
 
 app.use(express.static('./public'))
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
 // Start the server
 server.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)

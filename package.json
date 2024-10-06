@@ -1,7 +1,6 @@
 {
   "name": "connect4",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {

@@ -1,6 +1,7 @@
-import express from 'express'
-import http from 'http'
-import { WebSocketServer } from 'ws'
+const express = require('express')
+const http = require('http')
+const path = require('path')
+const { WebSocketServer } = require('ws')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -100,7 +101,11 @@ wss.on('connection', (ws, req) => {
     })
 })
 
-app.use(express.static('./public'))
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 // Start the server
 server.listen(port, () => {

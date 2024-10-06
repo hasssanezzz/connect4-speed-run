@@ -200,7 +200,7 @@ form.addEventListener('submit', (e) => {
     document.querySelector('#wait').classList.remove('hidden')
 })
 
-const socket = new WebSocket('ws://localhost:3000')
+const socket = new WebSocket('/')
 socket.onmessage = (msg) => {
     const json = JSON.parse(msg.data)
     const { action, payload } = json

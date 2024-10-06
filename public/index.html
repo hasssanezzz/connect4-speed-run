@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Connect 4</title>
+</head>
+
+<body onload="render()" class="min-h-screen bg-gray-800 text-white container p-5 m-auto max-w-md">
+
+    <div class="mb-10 text-center">
+        <h3 class="text-center text-4xl">It is <span id="turn"></span>'s turn</h3>
+        <small>you are <strong id="player"></strong> playing with <strong id="op"></strong></small>
+    </div>
+    <div id="grid" class="grid grid-cols-7 gap-3">
+    </div>
+
+    <div class="mt-10 flex gap-3">
+        <button id="exit" class="flex-auto bg-gray-900 px-5 py-2 font-semibold rounded-xl shadow-xl">Exit</button>
+    </div>
+
+    <main class="h-screen w-screen fixed top-0 left-0 bg-gray-800 flex items-center justify-center px-3">
+        <div class="w-full max-w-md p-5 rounded-xl bg-gray-900 shadow-md shadow-gray-900">
+            <div class="text-center mt-5 mb-10">
+                <h2 class="text-3xl text-center mb-3">Connect 4 with friends</h2>
+                <p class="text-gray-400">Current client ID: <strong id="xid" class="text-white"></strong></p>
+            </div>
+
+            <form class="space-y-3">
+                <label class="text-gray-400 block"="Nickname">Nickname</label>
+                <input type="text" name="nickname" class="w-full bg-gray-700 rounded-xl shadow-xl px-3 py-2"
+                    placeholder="Please enter your nickname" required>
+
+                <!-- TODO implement pairing with a friend later -->
+                <!-- <label class="text-gray-400 block"="Room ID (optioanl)">Room ID (optioanl)</label> -->
+                <!-- <input type="text" name="room" class="w-full bg-gray-700 rounded-xl shadow-xl px-3 py-2" placeholder="Your friend's room ID"> -->
+                <!-- <p>You can play randomly with anyone, or attach a room ID and play with a friend.</p> -->
+                <button class="flex-auto bg-gray-800 px-5 py-2 font-semibold rounded-xl shadow-xl w-full">Play</button>
+            </form>
+
+            <p id="wait" class="text-center mb-10 hidden">Finding a match, this could take a minute...</p>
+
+        </div>
+    </main>
+
+    <script src="/main.js"></script>
+</body>
+
+</html>
